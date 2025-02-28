@@ -113,7 +113,7 @@ const LandingPage = () => {
           </h1>
           
           <p className="description">
-            Join the new wave of transacting on your own terms. Bua is the future of digital trade.
+            Join the new wave of transacting on your own terms. Bua is the future of digital transacting.
           </p>
           
           {/* Download button with hover effect and tracking */}
