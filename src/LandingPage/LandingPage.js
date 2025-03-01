@@ -18,20 +18,20 @@ const LandingPage = () => {
     window.location.href = '/bua-app.apk';
   };
 
-  // Generate random bubbles - increased size range
+  // Generate random bubbles
   useEffect(() => {
     const generateBubbles = () => {
       const newBubbles = [];
-      const bubbleCount = 20; // Increased bubble count
+      const bubbleCount = 20;
       
       for (let i = 0; i < bubbleCount; i++) {
         newBubbles.push({
           id: i,
-          size: Math.random() * 100 + 40, // Increased size range from (20-80) to (40-140)
+          size: Math.random() * 100 + 40,
           x: Math.random() * 100,
           y: Math.random() * 100,
-          opacity: Math.random() * 0.6 + 0.15, // Slightly increased opacity
-          speed: Math.random() * 1.5 + 0.5, // Adjusted for smoother movement with larger bubbles
+          opacity: Math.random() * 0.6 + 0.15,
+          speed: Math.random() * 1.5 + 0.5,
           direction: Math.random() > 0.5 ? 1 : -1
         });
       }
@@ -47,7 +47,7 @@ const LandingPage = () => {
         prevBubbles.map(bubble => ({
           ...bubble,
           y: bubble.y - (bubble.speed * 0.1),
-          x: bubble.x + (Math.sin(bubble.y / 30) * bubble.direction * 0.15), // Adjusted for smoother movement
+          x: bubble.x + (Math.sin(bubble.y / 30) * bubble.direction * 0.15),
           // Reset bubbles that go off screen
           ...(bubble.y < -10 ? { y: 110, x: Math.random() * 100 } : {})
         }))
@@ -84,13 +84,15 @@ const LandingPage = () => {
           {/* Navigation menu */}
           <nav className={`nav ${menuOpen ? 'open' : ''}`}>
             <a href="#" className="nav-link" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="#about" className="nav-link" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#how-it-works" className="nav-link" onClick={() => setMenuOpen(false)}>How It Works</a>
+            <a href="#benefits" className="nav-link" onClick={() => setMenuOpen(false)}>Benefits</a>
+            <a href="#target-users" className="nav-link" onClick={() => setMenuOpen(false)}>Who Benefits</a>
             <a href="#footer" className="nav-link" onClick={() => setMenuOpen(false)}>Contact</a>
           </nav>
         </div>
       </header>
 
-      {/* Hero section */}
+      {/* 🟢 Hero section (Above the Fold) */}
       <div className="landing-container">
         {/* Animated bubbles */}
         {bubbles.map(bubble => (
@@ -103,7 +105,7 @@ const LandingPage = () => {
               left: `${bubble.x}%`,
               top: `${bubble.y}%`,
               background: `rgba(255, 255, 255, ${bubble.opacity})`,
-              boxShadow: `0 0 ${bubble.size / 2.5}px rgba(255, 255, 255, 0.8)` // Increased glow effect
+              boxShadow: `0 0 ${bubble.size / 2.5}px rgba(255, 255, 255, 0.8)`
             }}
           />
         ))}
@@ -111,12 +113,12 @@ const LandingPage = () => {
         {/* Content container with glow effect */}
         <div className="content-container">
           <h1 className="main-heading">
-            <span className="heading-intro">Welcome to the</span>
-            <span className="heading-highlight">Bua</span>
+            <span className="heading-intro">The Future of Payments</span>
+            <span className="heading-highlight">0.1% Fees, No Limits, Full Control</span>
           </h1>
           
           <p className="description">
-            Join the new wave of transacting on your own terms. Bua is the future of digital transacting.
+            Transact as much as you want at just 0.1% per transaction. Move money instantly and off-ramp to your bank whenever needed.
           </p>
           
           {/* Download button with hover effect and tracking */}
@@ -139,79 +141,232 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* About section */}
-      <section id="about" className="about-section">
-        <div className="about-container">
-          <div className="about-heading-container">
-            <h2 className="about-heading">Revolutionize Your Transactions</h2>
+      {/* 🔵 How It Works Section */}
+      <section id="how-it-works" className="how-it-works-section">
+        <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-heading">How It Works</h2>
+            <h3 className="section-subheading">Simple, Fast, and Efficient</h3>
           </div>
           
-          <div className="about-content">
-            <div className="about-text">
-            <h3 className="about-subheading">We Are Not A Cryptocurrency</h3>
-              <p>Bua is redefining digital transactions through our innovative Points Per Unit system. Unlike cryptocurrencies that rely on blockchain technology, Bua offers a more accessible, stable, and user-friendly approach to global transactions.</p>
-              
-              <p>We're built on a simple yet powerful premise: returning financial freedom to people by eliminating the barriers of traditional banking and the volatility of cryptocurrencies. Experience the future of digital exchange with Bua.</p>
-              
-              <ul className="feature-list">
-                <li>
-                  <div className="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                  </div>
-                  <div className="feature-info">
-                    <h3>Seamless Global Transactions</h3>
-                    <p>With Bua's Points Per Unit (PPU), send and receive value anywhere in the world instantly, without worrying about exchange rates or international fees.</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 1v22"></path>
-                      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                    </svg>
-                  </div>
-                  <div className="feature-info">
-                    <h3>Ultra-Low Transaction Fees</h3>
-                    <p>Enjoy transparent pricing with fees starting at just 0.1%, decreasing with transaction volume. No hidden charges, ever.</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    </svg>
-                  </div>
-                  <div className="feature-info">
-                    <h3>Intuitive Digital Wallet</h3>
-                    <p>Our sleek, user-friendly interface makes managing your finances effortless. Send payments with just a few taps and track your transaction history in real-time.</p>
-                  </div>
-                </li>
-              </ul>
+          <div className="points-system-intro">
+            <div className="points-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <div className="points-info">
+              <h3>Points Per Unit System</h3>
+              <p>Bua uses a points system instead of actual currency, providing stability and flexibility across borders. Each point maintains a consistent value, eliminating exchange rate concerns and enabling seamless global transactions.</p>
+            </div>
+          </div>
+          
+          <div className="steps-container">
+            <div className="step">
+              <div className="step-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+              </div>
+              <h3 className="step-title">1. Deposit Funds</h3>
+              <p className="step-description">Onboard with a one-time 1-2% fee and get started immediately. Your currency converts to points.</p>
             </div>
             
-            <div className="about-image">
-              <div className="image-placeholder">
-                <div className="image-bg"></div>
-                <div className="image-circles"></div>
-                <div className="image-content">
-                  <div className="image-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85 1 6.5 2.5L23 10"></path>
-                      <path d="M23 6v4h-4"></path>
-                      <path d="M12 7v5l3 3"></path>
-                    </svg>
-                  </div>
-                  <div className="placeholder-text">
-                    Transactions Reimagined
-                  </div>
+            <div className="step">
+              <div className="step-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="17 1 21 5 17 9"></polyline>
+                  <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                  <polyline points="7 23 3 19 7 15"></polyline>
+                  <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                </svg>
+              </div>
+              <h3 className="step-title">2. Transact Freely</h3>
+              <p className="step-description">Enjoy unlimited, near-instant point transfers at just 0.1% fee regardless of location.</p>
+            </div>
+            
+            <div className="step">
+              <div className="step-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 9V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                  <rect x="9" y="9" width="12" height="10" rx="2"></rect>
+                </svg>
+              </div>
+              <h3 className="step-title">3. Off-Ramp Anytime</h3>
+              <p className="step-description">Convert points back to your preferred currency and withdraw to your bank with minimal fees.</p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      {/* 🟠 Why Choose Us Section */}
+      <section id="benefits" className="benefits-section">
+        <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-heading">Why Choose Us?</h2>
+            <h3 className="section-subheading">Key Advantages That Set Us Apart</h3>
+          </div>
+          
+          <div className="benefits-grid">
+            <div className="benefit-card">
+              <div className="benefit-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 1v22"></path>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div className="benefit-info">
+                <h3>Ultra-Low Fees</h3>
+                <p>Just <strong>0.1% per transaction</strong> inside the system, compared to traditional services' 2-5%.</p>
+              </div>
+            </div>
+            
+            <div className="benefit-card">
+              <div className="benefit-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2v20"></path>
+                  <path d="M2 12h20"></path>
+                </svg>
+              </div>
+              <div className="benefit-info">
+                <h3>Unlimited Transactions</h3>
+                <p>No daily limits or hidden fees. Transfer as much as you need, whenever you need.</p>
+              </div>
+            </div>
+            
+            <div className="benefit-card">
+              <div className="benefit-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+              </div>
+              <div className="benefit-info">
+                <h3>Seamless Bank Integration</h3>
+                <p>Off-ramp directly to your preferred bank anytime with minimal friction.</p>
+              </div>
+            </div>
+            
+            <div className="benefit-card">
+              <div className="benefit-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <div className="benefit-info">
+                <h3>Designed for High-Volume Users</h3>
+                <p>Perfect for businesses, traders, and frequent senders who need reliability and speed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🔴 Who Benefits The Most Section */}
+      <section id="target-users" className="target-users-section">
+        <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-heading">Who Benefits The Most?</h2>
+            <h3 className="section-subheading">Perfect For These Use Cases</h3>
+          </div>
+          
+          <div className="user-cases">
+            <div className="user-case">
+              <div className="user-case-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <h3 className="user-case-title">Businesses & Freelancers</h3>
+              <p className="user-case-description">Save thousands on transaction fees with our ultra-low 0.1% rate.</p>
+            </div>
+            
+            <div className="user-case">
+              <div className="user-case-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <h3 className="user-case-title">International Money Transfers</h3>
+              <p className="user-case-description">Lower fees than banks and traditional remittance services.</p>
+            </div>
+            
+            <div className="user-case">
+              <div className="user-case-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3 className="user-case-title">Large Transactions</h3>
+              <p className="user-case-description">No caps, no crazy percentage fees, just 0.1% regardless of amount.</p>
+            </div>
+            
+            <div className="user-case">
+              <div className="user-case-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 8v4l3 3"></path>
+                  <path d="M9 17a3 3 0 1 0 6 0"></path>
+                </svg>
+              </div>
+              <h3 className="user-case-title">Everyday People</h3>
+              <p className="user-case-description">Send money to friends and family without the hefty fees of traditional services.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 🟣 On/Off-Ramp Advantage Section */}
+      <section className="onramp-section">
+        <div className="section-container">
+          <div className="onramp-content">
+            <h2 className="onramp-heading">Unbeatable Transaction Economics</h2>
+            <p className="onramp-description">
+              Unlike banks that charge you on every transaction, we only apply a small 1-2% fee when you enter or exit. 
+              Once inside, you transact for just 0.1%—saving you big in the long run!
+            </p>
+            <div className="onramp-illustration">
+              <div className="onramp-diagram">
+                <div className="onramp-item entry">
+                  <div className="onramp-label">Entry</div>
+                  <div className="onramp-fee">1-2% Fee</div>
+                </div>
+                <div className="onramp-item inside">
+                  <div className="onramp-label">Inside System</div>
+                  <div className="onramp-fee">0.1% Fee</div>
+                </div>
+                <div className="onramp-item exit">
+                  <div className="onramp-label">Exit</div>
+                  <div className="onramp-fee">1-2% Fee</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 🟢 Final Call to Action */}
+      <section className="final-cta-section">
+        <div className="section-container">
+          <h2 className="final-cta-heading">Ready to experience low-fee transactions?</h2>
+          <button className="download-button" onClick={trackDownload}>
+            <span className="button-content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 17V3" />
+                <path d="m6 11 6 6 6-6" />
+                <path d="M19 21H5" />
+              </svg>
+              Download for Android
+            </span>
+            <span className="button-hover"></span>
+          </button>
         </div>
       </section>
 
@@ -221,12 +376,6 @@ const LandingPage = () => {
           <div className="footer-logo">
             <span className="logo-text">Bua</span>
           </div>
-          
-          {/*<div className="footer-links">
-            <a href="#" className="footer-link">Privacy</a>
-            <a href="#" className="footer-link">Terms</a>
-            <a href="#" className="footer-link">Contact</a>
-          </div>*/}
           
           <div className="social-links">
             <a href="https://x.com/buabetatech" className="social-link x-logo" aria-label="X (Twitter)">

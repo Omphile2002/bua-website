@@ -754,3 +754,540 @@
     justify-content: center;
   }
 }
+
+/* Keep all existing base styles and only add new ones */
+
+/* New Section Styles */
+.section-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #5f093d;
+}
+
+.section-subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #5f093d;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 0 1.5rem;
+}
+
+.section-subheading::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 80px;
+  background-color: #5f093d;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* How It Works Section */
+.how-it-works-section {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+  color: #333;
+}
+
+/* Points System Intro */
+.points-system-intro {
+  display: flex;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 1.5rem 2rem;
+  background-color: rgba(95, 9, 61, 0.05);
+  border-radius: 10px;
+  border-left: 4px solid #5f093d;
+}
+
+.points-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(95, 9, 61, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  color: #5f093d;
+}
+
+.points-info h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #5f093d;
+}
+
+.points-info p {
+  margin: 0;
+  font-size: 1.075rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: 0 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+}
+
+.step-icon {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: rgba(95, 9, 61, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: #5f093d;
+  transition: all 0.3s ease;
+}
+
+.step:hover .step-icon {
+  background-color: rgba(95, 9, 61, 0.25);
+  box-shadow: 0 6px 15px rgba(95, 9, 61, 0.2);
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #5f093d;
+}
+
+.step-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.flow-illustration {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  text-align: center;
+}
+
+.flow-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(95, 9, 61, 0.15);
+}
+
+/* Benefits Section */
+.benefits-section {
+  background-color: #f8f8f8;
+  padding: 6rem 2rem;
+  color: #333;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  display: flex;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(95, 9, 61, 0.1);
+}
+
+.benefit-icon {
+  background-color: rgba(95, 9, 61, 0.15);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  color: #5f093d;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  background-color: #5f093d;
+  color: #ffffff;
+}
+
+.benefit-info h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #5f093d;
+}
+
+.benefit-info p {
+  margin: 0;
+  font-size: 1.075rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Target Users Section */
+.target-users-section {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+  color: #333;
+}
+
+.user-cases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.user-case {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  background-color: rgba(95, 9, 61, 0.05);
+  transition: all 0.3s ease;
+}
+
+.user-case:hover {
+  background-color: #5f093d;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(95, 9, 61, 0.2);
+}
+
+.user-case-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5f093d;
+  box-shadow: 0 5px 15px rgba(95, 9, 61, 0.1);
+  transition: all 0.3s ease;
+}
+
+.user-case:hover .user-case-icon {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
+}
+
+.user-case-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #5f093d;
+  transition: all 0.3s ease;
+}
+
+.user-case-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.user-case:hover .user-case-title,
+.user-case:hover .user-case-description {
+  color: #ffffff;
+}
+
+/* On/Off-Ramp Section */
+.onramp-section {
+  background-color: #5f093d;
+  padding: 5rem 2rem;
+  color: #ffffff;
+}
+
+.onramp-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.onramp-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.onramp-description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.onramp-illustration {
+  margin-top: 2rem;
+}
+
+.onramp-diagram {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.onramp-diagram::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.onramp-item {
+  position: relative;
+  z-index: 2;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.onramp-item.entry {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.onramp-item.inside {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.onramp-item.exit {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.onramp-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.onramp-fee {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.onramp-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.onramp-item.inside:hover {
+  transform: scale(1.2);
+}
+
+/* Final CTA Section */
+.final-cta-section {
+  background-color: #f8f8f8;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.final-cta-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #5f093d;
+  margin-bottom: 2.5rem;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .user-cases {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .onramp-diagram {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  /* Fix for vertical line through bubbles */
+  .onramp-diagram::before {
+    display: none; /* Remove the vertical line completely */
+  }
+  
+  /* Add connecting arrows instead */
+  .onramp-item {
+    width: 160px;
+    height: 160px;
+    position: relative;
+  }
+  
+  /* Add arrow down after first and second items */
+  .onramp-item.entry::after,
+  .onramp-item.inside::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 16px solid rgba(255, 255, 255, 0.4);
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 2.5rem;
+  }
+  
+  .section-subheading {
+    font-size: 1.25rem;
+  }
+  
+  .points-system-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  
+  .points-icon {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .steps-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .step {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .onramp-item {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .onramp-label {
+    font-size: 1.125rem;
+  }
+  
+  .onramp-fee {
+    font-size: 1.25rem;
+  }
+  
+  .final-cta-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .benefits-grid,
+  .user-cases {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefit-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .benefit-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Ensure the new styles complement existing styles in mobile view */
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+  
+  .section-subheading {
+    font-size: 1.125rem;
+  }
+  
+  .onramp-heading {
+    font-size: 1.875rem;
+  }
+  
+  .onramp-description {
+    font-size: 1.125rem;
+  }
+  
+  .onramp-item {
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
+  }
+  
+  .final-cta-heading {
+    font-size: 1.75rem;
+  }
+}
