@@ -18,7 +18,7 @@
 
 .header-container {
   max-width: 80rem;
-  margin: 0 auto;
+  margin: 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +46,21 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #ffffff;
+}
+
+/* Beta Badge */
+.beta-badge {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-right: auto;
+  margin-left: 2rem;
 }
 
 /* Hamburger Menu */
@@ -171,11 +186,20 @@
 .description {
   font-size: 1.5rem; /* Increased from 1.25rem */
   color: #ffffff;
-  margin-bottom: 4rem; /* Increased from 3rem */
+  margin-bottom: 1.5rem; /* Reduced to make space for coming soon text */
   max-width: 42rem; /* Increased from 36rem */
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6; /* Added for better readability */
+}
+
+/* Coming Soon Text */
+.coming-soon-text {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.5px;
 }
 
 /* Button Styling - Increased size */
@@ -583,6 +607,12 @@
     padding: 1rem;
   }
   
+  .beta-badge {
+    margin-left: 1rem;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+  }
+  
   /* Show hamburger menu and hide regular nav on tablet and below */
   .hamburger-menu {
     display: block;
@@ -627,6 +657,10 @@
     font-size: 1.25rem;
   }
   
+  .coming-soon-text {
+    font-size: 1.5rem;
+  }
+  
   .download-button {
     padding: 1.125rem 2.5rem;
     font-size: 1.25rem;
@@ -649,6 +683,12 @@
   .logo-icon img {
     height: 32px;
   }
+  
+  .beta-badge {
+    margin-left: 0.5rem;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+  }
 
   .content-container {
     padding: 1.5rem;
@@ -660,6 +700,14 @@
   
   .heading-highlight {
     font-size: 3.25rem;
+  }
+  
+  .description {
+    font-size: 1.125rem;
+  }
+  
+  .coming-soon-text {
+    font-size: 1.25rem;
   }
   
   .about-section {

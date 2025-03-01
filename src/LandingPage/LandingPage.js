@@ -69,6 +69,9 @@ const LandingPage = () => {
             <span className="logo-text">Bua</span>
           </div>
           
+          {/* Beta Badge */}
+          <div className="beta-badge">Beta</div>
+          
           {/* Hamburger menu button for mobile */}
           <div className="hamburger-menu" onClick={toggleMenu}>
             <div className={`hamburger-icon ${menuOpen ? 'open' : ''}`}>
