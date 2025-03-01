@@ -118,7 +118,7 @@ const LandingPage = () => {
           </h1>
           
           <p className="description">
-            Transact as much as you want at just 0.1% per transaction. Move money instantly and off-ramp to your bank whenever needed.
+            Transact as much as you want at just 0.1% per transaction. Move points instantly and off-ramp to your bank whenever needed.
           </p>
           
           {/* Download button with hover effect and tracking */}
@@ -293,7 +293,7 @@ const LandingPage = () => {
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                 </svg>
               </div>
-              <h3 className="user-case-title">International Money Transfers</h3>
+              <h3 className="user-case-title">International Points Transfers</h3>
               <p className="user-case-description">Lower fees than banks and traditional remittance services.</p>
             </div>
             
@@ -317,7 +317,7 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="user-case-title">Everyday People</h3>
-              <p className="user-case-description">Send money to friends and family without the hefty fees of traditional services.</p>
+              <p className="user-case-description">Send points to friends and family without the hefty fees of traditional services.</p>
             </div>
           </div>
         </div>
