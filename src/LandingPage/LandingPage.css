@@ -2,6 +2,9 @@
 .page-container {
   width: 100%;
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header Styles */
@@ -138,6 +141,7 @@
 .landing-container {
   position: relative;
   height: 100vh;
+  min-height: 600px;
   width: 100%;
   overflow: hidden;
   background-color: #5f093d;
@@ -145,6 +149,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 80px 0 0; /* Added padding to prevent header overlap */
 }
 
 /* Bubbles Styling - Increased size multiplier */
@@ -528,6 +533,9 @@
   background-color: #450730;
   color: #fff;
   padding: 4rem 2rem 2rem;
+  position: relative; /* Changed from fixed to relative */
+  width: 100%;
+  z-index: 20;
 }
 
 .footer-container {
@@ -560,6 +568,8 @@
 }
 
 .social-links {
+  display: flex;
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -581,6 +591,10 @@
 }
 
 .x-logo {
+  padding: 10px;
+}
+
+.email-link {
   padding: 10px;
 }
 
@@ -611,6 +625,11 @@
     margin-left: 1rem;
     padding: 3px 8px;
     font-size: 0.75rem;
+  }
+  
+  /* Added padding to landing container for better spacing on mobile */
+  .landing-container {
+    padding: 100px 0 80px;
   }
   
   /* Show hamburger menu and hide regular nav on tablet and below */
@@ -708,6 +727,16 @@
   
   .coming-soon-text {
     font-size: 1.25rem;
+  }
+  
+  .download-button {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+  
+  .button-content svg {
+    width: 24px;
+    height: 24px;
   }
   
   .about-section {
