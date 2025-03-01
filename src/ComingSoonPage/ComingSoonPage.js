@@ -12,7 +12,7 @@ const ComingSoonPage = () => {
 
   // Calculate countdown to March 3, 2025
   useEffect(() => {
-    const launchDate = new Date('March 3, 2025 00:00:00').getTime();
+    const launchDate = new Date('March 7, 2025 00:00:00').getTime();
     
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -122,7 +122,7 @@ const ComingSoonPage = () => {
           
           {/* Launch date */}
           <div className="launch-date">
-            <p>3 March 2025</p>
+            <p>7 March 2025</p>
           </div>
           
           {/* Countdown timer */}
