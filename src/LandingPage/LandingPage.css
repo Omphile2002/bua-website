@@ -1291,3 +1291,474 @@
     font-size: 1.75rem;
   }
 }
+
+/* New Ecosystem Section Styles */
+.ecosystem-section {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+  color: #333;
+  overflow: hidden;
+}
+
+.ecosystem-intro {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+}
+
+.ecosystem-card {
+  background-color: rgba(95, 9, 61, 0.03);
+  border-radius: 12px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(95, 9, 61, 0.1);
+}
+
+.ecosystem-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(95, 9, 61, 0.1);
+  background-color: rgba(95, 9, 61, 0.06);
+}
+
+.ecosystem-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(95, 9, 61, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #5f093d;
+  transition: all 0.3s ease;
+}
+
+.ecosystem-card:hover .ecosystem-icon {
+  background-color: #5f093d;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.ecosystem-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #5f093d;
+}
+
+.ecosystem-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.ecosystem-visual {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 3rem 2rem;
+  background-color: rgba(95, 9, 61, 0.03);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(95, 9, 61, 0.08);
+}
+
+.ecosystem-flow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.ecosystem-flow::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: rgba(95, 9, 61, 0.2);
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  z-index: 1;
+}
+
+.flow-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.flow-node.entry, .flow-node.exit {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(95, 9, 61, 0.08);
+  justify-content: center;
+  padding: 0.5rem;
+  border: 2px solid rgba(95, 9, 61, 0.2);
+}
+
+.flow-node.system {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: rgba(95, 9, 61, 0.15);
+  justify-content: center;
+  padding: 0.5rem;
+  border: 2px solid rgba(95, 9, 61, 0.3);
+  position: relative;
+}
+
+.node-icon {
+  color: #5f093d;
+  margin-bottom: 0.5rem;
+}
+
+.node-label {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #5f093d;
+}
+
+.node-sublabel {
+  font-size: 1rem;
+  color: #5f093d;
+  font-weight: 500;
+}
+
+.flow-arrow {
+  color: rgba(95, 9, 61, 0.6);
+  z-index: 2;
+}
+
+.system-connections {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px dashed rgba(95, 9, 61, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 60s linear infinite;
+}
+
+.connection {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #5f093d;
+  border-radius: 50%;
+}
+
+.connection:nth-child(1) {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.connection:nth-child(2) {
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+
+.connection:nth-child(3) {
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.connection:nth-child(4) {
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Countdown Timer Styles */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  margin-bottom: 60px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+}
+
+.final-cta-section .countdown-value {
+  background: rgba(95, 9, 61, 0.15);
+  color: #5f093d;
+  box-shadow: 0 8px 16px rgba(95, 9, 61, 0.15);
+}
+
+.countdown-label {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.final-cta-section .countdown-label {
+  color: #5f093d;
+}
+
+/* Subscribe Form Styles */
+.subscribe-container {
+  max-width: 500px;
+  margin: 3rem auto 0;
+}
+
+.subscribe-text {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #5f093d;
+  text-align: center;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.subscribe-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(95, 9, 61, 0.3);
+  background-color: #ffffff;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.subscribe-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.subscribe-input:focus {
+  border-color: #5f093d;
+  box-shadow: 0 0 0 2px rgba(95, 9, 61, 0.2);
+}
+
+.subscribe-button {
+  padding: 1rem 1.5rem;
+  background-color: #5f093d;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.subscribe-button:hover {
+  background-color: #7b0e50;
+  box-shadow: 0 8px 16px rgba(95, 9, 61, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Final CTA Section Updates */
+.final-cta-section {
+  background-color: #f8f8f8;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.launch-announcement {
+  margin: 2rem auto;
+}
+
+.launch-text {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #5f093d;
+  margin-bottom: 1rem;
+}
+
+/* Adjusted Landing Section for Countdown */
+.coming-soon-text {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 1.5rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .ecosystem-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .ecosystem-flow {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .ecosystem-flow::before {
+    display: none; /* Remove the horizontal line completely */
+  }
+  
+  /* Add connecting arrows instead */
+  .flow-node {
+    margin-bottom: 1rem;
+  }
+  
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .ecosystem-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .ecosystem-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .ecosystem-card {
+    padding: 2rem;
+  }
+  
+  .ecosystem-intro {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .countdown-value {
+    font-size: 2rem;
+    min-width: 60px;
+    height: 60px;
+  }
+  
+  .countdown-item {
+    min-width: 60px;
+  }
+  
+  .countdown-label {
+    font-size: 0.75rem;
+  }
+  
+  .launch-text {
+    font-size: 1.5rem;
+  }
+  
+  .subscribe-form {
+    flex-direction: column;
+  }
+  
+  .subscribe-input, 
+  .subscribe-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ecosystem-card {
+    padding: 1.5rem;
+  }
+  
+  .ecosystem-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .ecosystem-card h3 {
+    font-size: 1.25rem;
+  }
+  
+  .ecosystem-card p {
+    font-size: 1rem;
+  }
+  
+  .ecosystem-visual {
+    padding: 1.5rem 1rem;
+  }
+  
+  .flow-node.entry, 
+  .flow-node.exit {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .flow-node.system {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .node-label {
+    font-size: 1rem;
+  }
+  
+  .node-sublabel {
+    font-size: 0.875rem;
+  }
+  
+  .countdown-value {
+    font-size: 1.5rem;
+    min-width: 50px;
+    height: 50px;
+    padding: 0.5rem;
+  }
+  
+  .countdown-container {
+    gap: 0.75rem;
+  }
+  
+  .countdown-item {
+    min-width: 50px;
+  }
+}
