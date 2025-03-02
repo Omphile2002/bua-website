@@ -144,7 +144,7 @@ const LandingPage = () => {
           </h1>
           
           <p className="description">
-            Join a revolutionary financial ecosystem where points flow seamlessly between members. With ultra-low 0.1% transaction fees and no limits, Bua empowers you to transact freely within our thriving community.
+            Join a revolutionary financial ecosystem where points flow seamlessly between members. With ultra-low 0.1% transaction fees and no limits, Bua empowers you to transact freely within our growing ecosystem.
           </p>
           
           {/* Coming Soon text */}
